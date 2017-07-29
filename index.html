@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Neighborhood Map</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="css/mine.css"/>
+  </head>
+  <body>
+        <div class="contain">
+
+            <div class="col-xs-6 col-md-4 col-lg-3 Markers-list">
+                <div class="input-group">
+                    <h3 class="whitecolor">
+                    Neighborhood Locations (<span data-bind="text:Locations().length"></span>)
+                    </h3> 
+                    <div class="row">
+                        <div >
+                            <form class="search-form">
+                                <div class="form-group has-feedback">
+
+                                    <input type="text" class="form-control" name="search" id="search" placeholder="search Locations.." data-bind="value: query, valueUpdate: 'keyup'" autocomplete="on">
+                                    
+                                </div>
+                            </form>
+                        </div>     
+                    </div>
+
+                    <!-- Templates are a simple and convenient way to build sophisticated UI structures
+                    possibly with repeating or nested blocks - as a function of your view model data.
+                    Reference:
+                        http://knockoutjs.com/documentation/template-binding.html -->
+
+                    <ul class="text-center" data-bind="template: {name:'Loc', foreach:Locations}">
+                    </ul>
+                    
+                    <!-- The foreach binding duplicates a section of markup for each entry in an array,
+                    and binds each copy of that markup to the corresponding array item.
+                    This is especially useful for rendering lists or tables.
+                    Reference:
+                          http://knockoutjs.com/documentation/foreach-binding.html -->
+                    <script type="text/html" id="Loc">
+                      <li>
+                        <h4 data-bind="text: title, click: ShowMarkerOnClick"></h4>
+                      </li>
+                    </script>
+
+                </div>
+            </div>
+
+
+
+            <div id="Neighborhood-Map" class="col-xs-6 col-md-8 col-lg-9">
+            </div>
+        </div>
+
+      
+
+        <script defer src="js/handlers/map-style.js"></script>
+        <script defer src="js/handlers/Locations.js"></script>
+        <script defer src="js/handlers/markers.js"></script>
+        <script defer src="js/handlers/map-stylish.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+        <script src="js/libraries/jquery-1.12.3.min.js"></script>
+        <script src="js/libraries/bootstrap.min.js"></script>
+        <script defer src="js/handlers/general.js"></script>
+        <script src='http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js'></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/1.2.1/knockout-min.js"></script>
+        <script defer src="js/viewmodel.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmf7KqnfskGa8rC4RdUeYcg1UDeX1_nj8&v=3&callback=initMap" onerror="ErrorLoad()">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+html, body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+
+ }
+
+/* display Neighborhood-Map div  */
+#Neighborhood-Map {
+    height:100%;
+}
+
+ul {
+    list-style-type: none;
+    padding-top: 15%;
+ }
+
+li {
+    width: 100%;
+    background-color: #38414e;
+    border: #FE7569 solid;
+    padding: 5%;
+    margin: 5% 0;
+}
+
+li:hover{
+    background-color: #212a37;
+    border: #746855 solid;
+    cursor: pointer;
+}
+
+h4 {
+    color: #d59563;
+}
+
+h4:hover{
+    color: #FE7569;
+}
+
+/* design Markers list */
+.Markers-list{
+    height: 100%;
+    border-right: #d59563 solid;
+    background-color: #242f3e;
+}
+
+.contain{
+    height: 100%;
+}
+
+.widthfull{
+    width: 100%;
+}
+
+.whitecolor{
+    color:white;
+}
+
+/* Designe Search Style.. */
+.search-form .form-group {
+  float: right !important;
+  transition: all 0.35s, border-radius 0s;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+.search-form .form-group input.form-control {
+  padding-right: 20px;
+  border: 0 none;
+  background: transparent;
+  box-shadow: none;
+  display:block;
+}
+.search-form .form-group input.form-control::-webkit-input-placeholder {
+  display: none;
+}
+.search-form .form-group input.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  display: none;
+}
+.search-form .form-group input.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  display: none;
+}
+.search-form .form-group input.form-control:-ms-input-placeholder {
+  display: none;
+}
+.search-form .form-group:hover,
+.search-form .form-group.hover {
+  width: 100%;
+  border-radius: 4px 25px 25px 4px;
+}
+.search-form .form-group span.form-control-feedback {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  color: #3596e0;
+  left: initial;
+  font-size: 14px;
+}
