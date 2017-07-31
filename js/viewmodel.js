@@ -32,7 +32,7 @@ var viewModel = {
  * item in the list ..
  * Reference:
  *      No Reference Here, I Build this function By Myself :) */
-showMarkerOnClick = function(result) {
+showMarkerOnClick = function() {
     //google.maps.event.trigger(markers[this.id],'click');
     
     /* Open LargeInfoWindow Using populateInfoWindow
