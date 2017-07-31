@@ -18,11 +18,12 @@ var viewModel = {
 
     search: function(value) {
         viewModel.Locations.removeAll();
-        for(var x in Locations) {
+        clearMarkers();
+        for(var x =0; x < Locations.length; x++) {
             if(Locations[x].title.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
                 viewModel.Locations.push(Locations[x]);
+                markers[x].setVisible(true);
             }
-            
         }
     }
 };
@@ -31,38 +32,15 @@ var viewModel = {
  * item in the list ..
  * Reference:
  *      No Reference Here, I Build this function By Myself :) */
-ShowMarkerOnClick = function() {
+showMarkerOnClick = function(result) {
     //google.maps.event.trigger(markers[this.id],'click');
     
     /* Open LargeInfoWindow Using populateInfoWindow
      * We don't need to build a new function, we already have one^^ */
     populateInfoWindow(markers[this.id], largeInfoWindow);
+    map.setCenter(marker.getPosition());
  };
 
 viewModel.query.subscribe(viewModel.search);
 
 ko.applyBindings(viewModel);
-
-/* History ==> The next function will done well with select2 library
- * BUT after I asked about using it in Udacity Forum :
- https://discussions.udacity.com/t/using-select2-library/320024/2
- 
- * I know that Knockout must be used to handle list, filter, 
- * and any other information on the page that is subject to changing state, 
- 
- * So, I commented it and build another one above Met specification  >_<
-
-$(".MarkerOnClick").select2(
-    ({
-        data: neighborhoodLocations.title
-    })
-).on("select2:select", function (e) {
-    var selected_element = $(e.currentTarget);
-    var select_val = selected_element.val();
-    for(var i=0; i<Locations.length; i++){
-        if(select_val == Locations[i].title){
-            var x = Locations[i].id;
-            populateInfoWindow(markers[x], largeInfoWindow);
-        }
-    }
-});  */
