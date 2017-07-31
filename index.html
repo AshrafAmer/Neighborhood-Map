@@ -4,13 +4,13 @@
       <title>Neighborhood Map</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta charset="utf-8">
-      <link rel="stylesheet" href="css/bootstrap.min.css"/>
-      <link rel="stylesheet" href="css/mine.css"/>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/mine.css">
   </head>
   <body>
         <div class="contain">
 
-            <div class="col-xs-6 col-md-4 col-lg-3 Markers-list">
+            <aside class="col-xs-6 col-md-4 col-lg-3 Markers-list">
                 <div class="input-group">
                     <h3 class="whitecolor">
                     Neighborhood Locations (<span data-bind="text:Locations().length"></span>)
@@ -47,27 +47,27 @@
                     </script>
 
                 </div>
-            </div>
+            </aside>
 
 
 
-            <div id="Neighborhood-Map" class="col-xs-6 col-md-8 col-lg-9">
-            </div>
+            <main id="Neighborhood-Map" class="col-xs-6 col-md-8 col-lg-9">
+            </main>
         </div>
 
       
 
-        <script defer src="js/handlers/map-style.js"></script>
-        <script defer src="js/handlers/Locations.js"></script>
-        <script defer src="js/handlers/markers.js"></script>
-        <script defer src="js/handlers/map-stylish.js"></script>
+        <script src="js/handlers/map-style.js"></script>
+        <script src="js/handlers/Locations.js"></script>
+        <script src="js/handlers/markers.js"></script>
+        <script src="js/handlers/map-stylish.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
         <script src="js/libraries/jquery-1.12.3.min.js"></script>
         <script src="js/libraries/bootstrap.min.js"></script>
-        <script defer src="js/handlers/general.js"></script>
+        <script src="js/handlers/general.js"></script>
         <script src='http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js'></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/1.2.1/knockout-min.js"></script>
-        <script defer src="js/viewmodel.js"></script>
+        <script src="js/viewmodel.js"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmf7KqnfskGa8rC4RdUeYcg1UDeX1_nj8&v=3&callback=initMap" onerror="ErrorLoad()">
         </script>
     </body>
